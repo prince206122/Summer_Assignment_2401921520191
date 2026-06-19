@@ -7,7 +7,6 @@ public:
 
         for(int i = 0; i < nums.size(); i++)
         {
-            // Remove indices outside window
             while(!dq.empty() && dq.front() <= i-k)
                 dq.pop_front();
 
@@ -16,8 +15,6 @@ public:
                 dq.pop_back();
 
             dq.push_back(i);
-
-            // Window complete
             if(i >= k-1)
                 ans.push_back(nums[dq.front()]);
         }
